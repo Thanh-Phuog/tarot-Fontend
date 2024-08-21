@@ -26,7 +26,7 @@ export default function DividerStack() {
       >
         <Item>Home</Item>
         <Item>About</Item>
-        <Item>Cards</Item>
+        <Item><a href="/card">Cards</a></Item>
         <Item>Tarot Readings</Item>
       </Stack>
     </div>

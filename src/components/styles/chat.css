@@ -1,0 +1,118 @@
+.container2 {
+    padding: 20px;
+    background: linear-gradient(
+        180deg,
+        rgba(41, 6, 63, 1),
+        rgba(111, 36, 157, 1), 
+        rgba(41, 6, 63, 1)
+    );
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content2 horizontally */
+}
+
+.iconlogo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 10px 0 0 10px;
+}
+
+.iconlogo img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.iconlogo p {
+    font-family: 'Just Another Hand', cursive;
+    color: #E5E4CB;
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+/* Chat messages */
+.chat {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.chatAI, .chatUser {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.chatAI {
+    justify-content: flex-start;
+}
+
+.chatAIcontent {
+    background-color: #30034B;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 15px 15px 15px 0;
+    max-width: 70%;
+    border: 1px solid #250538;
+}
+
+.chatUser {
+    justify-content: flex-end;
+}
+
+.chatUsercontent {
+    background-color: #30034B;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 15px 15px 0 15px;
+    max-width: 70%;
+    border: 1px solid #250538;
+}
+
+.send {
+    position: relative;
+    margin-top: 20px;
+}
+
+.send input[type="text"] {
+    width: 900px;
+    padding: 10px 40px 10px 15px;
+    border-radius: 15px;
+    border: 0.3px solid #250538;
+    background-color: #30034B;
+}
+
+.send svg {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #E3DCB1;
+}
+
+.content2 {
+    width: 100%;
+    max-width: 900px;
+    font-family: "Comfortaa", sans-serif;
+    gap: 100px;
+    z-index: 10;
+    margin: 50px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content inside content2 */
+}
+.content2 p.dk {
+    text-align: center;
+    color: #929292;
+    font-weight: 500;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+.content2 p.dk b{
+    color: #CDCDCD;
+}
+

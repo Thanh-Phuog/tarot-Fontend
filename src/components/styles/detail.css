@@ -6,7 +6,7 @@
     justify-content: center;
     align-items: center;
     gap:30px;
-    background-color: rgba(38, 24, 45, 0.6);;
+    background-color: rgba(133, 131, 133, 0.6);
     border-radius: 20px;
     backdrop-filter: blur(30px);
     box-shadow: 0 0.5px 1px 0 rgba(255, 255, 255, 0.23) inset,
@@ -69,4 +69,21 @@
     rgba(111, 36, 157, 1)  /* Tương ứng với #6f249d */
 );
  /* Optional: Background color */
+  }
+  a{
+    text-decoration: none;
+    color: #CDCDCD;
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+  
+  h2 {
+    margin: 20px 0;
+  }
+  
+  .card-description {
+    text-align: center;
+   
   }

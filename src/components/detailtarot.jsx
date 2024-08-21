@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './styles/detail.css'; // Your custom styles
+import SpeedDial from "@mui/material/SpeedDial";
+import ChatIcon from "@mui/icons-material/Chat";
+import Box from "@mui/material/Box";
+import Head from "./header";
 
 function DetailTarot(props) {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -71,6 +75,8 @@ function DetailTarot(props) {
     }, []);
 
     return (
+        <div>
+        <Head />
         <div className='container'>
             <h1>Chi tiết về lá bài Tarot</h1>
             <div className='content'>
@@ -89,6 +95,25 @@ function DetailTarot(props) {
                     </div>
                 </div>
             </div>
+        </div>
+        <Box
+          sx={{
+            position: "fixed" /* Thay đổi position thành fixed */,
+            bottom: 16,
+            right: 16,
+            zIndex: 1000 /* Đảm bảo SpeedDial nằm trên các nội dung khác */,
+          }}
+        >
+            <a href="/">
+          <SpeedDial
+            ariaLabel="SpeedDial openIcon example"
+            sx={{
+              position:
+                "relative" /* Sử dụng relative để giữ vị trí bên trong Box */,
+            }}
+            icon={<ChatIcon />}
+          /></a>
+        </Box>
         </div>
     );
 }
