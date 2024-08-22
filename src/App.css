@@ -12,6 +12,9 @@
   height: 40vmin;
   pointer-events: none;
 }
+.custom-speed-dial .MuiSpeedDial-fab {
+  background-color: transparent !important;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

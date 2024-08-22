@@ -156,7 +156,8 @@ export default class Cards extends React.Component {
               </div>
             </div>
           </div>
-          <div className="detail" style={{ width: "750px" }}>
+          <div className="detail" style={{ width: "750px",  border: "2px solid #561B6B",  backgroundColor: "rgba(38, 24, 45, 0.6)",   borderRadius: "20px",
+            backdropFilter: "blur(30px)"}}>
             <div className="content">
               <Box sx={{ width: "90%" }}>
                 <h2>Tarot Cards</h2>
@@ -193,10 +194,12 @@ export default class Cards extends React.Component {
                 sx={{
                   position: "relative",
                 }}
+                className="custom-speed-dial" // Add the custom class
                 icon={<ChatIcon />}
               />
             </a>
           </Box>
+
         </div>
       </div>
     );

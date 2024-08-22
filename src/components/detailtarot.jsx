@@ -66,6 +66,7 @@ function DetailTarot() {
                 <div className='detail'>
                     <div className='content'>
                         <div className="info">
+                            <h2>{cards[currentSlide]?.name}</h2>
                             <p><strong>Meaning:</strong> {cards[currentSlide]?.meaning_up}</p>
                             <p><strong>Reversed Meaning:</strong> {cards[currentSlide]?.meaning_rev}</p>
                         </div>
@@ -79,7 +80,7 @@ function DetailTarot() {
                             </div>
                         </div>
                     </div>
-                    <h2>{cards[currentSlide]?.desc}</h2>
+                    <p style={{margin: "0px 30px 10px 35px", textAlign:"left"}}><strong>Description: </strong>{cards[currentSlide]?.desc}</p>
                 </div>
             </div>
             <Box
@@ -89,17 +90,19 @@ function DetailTarot() {
                     right: 16,
                     zIndex: 1000,
                 }}
-            >
+                >
                 <a href="/">
                     <SpeedDial
-                        ariaLabel="SpeedDial openIcon example"
-                        sx={{
-                            position: "relative",
-                        }}
-                        icon={<ChatIcon />}
+                    ariaLabel="SpeedDial openIcon example"
+                    sx={{
+                        position: "relative",
+                    }}
+                    className="custom-speed-dial" // Add the custom class
+                    icon={<ChatIcon />}
                     />
                 </a>
             </Box>
+
         </div>
     );
 }

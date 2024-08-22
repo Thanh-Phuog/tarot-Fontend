@@ -4,8 +4,6 @@ import "./App.css";
 import Detailtarot from "./components/detailtarot";
 import Cards from "./components/cards";
 import Chat from "./components/chat";
-import Test from "./components/test";
-import Head from "./components/header";
 
 function App() {
   return (

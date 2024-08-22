@@ -10,11 +10,9 @@
 .detail{
     width: 1000px;
     font-family: "Comfortaa";
-    background-color: rgba(38, 24, 45, 0.6);
     border-radius: 20px;
     backdrop-filter: blur(30px);
     margin:20px 0px 50px 0px;
-    border: 2px solid #561B6B;
 }
 .info{
     width: 450px;
@@ -26,7 +24,7 @@
     text-align: justify;
     box-sizing: border-box;
 }
-.info p{
+p{
     color: #fff;
     font-weight: 500;
     font-size: 1rem;
@@ -73,6 +71,7 @@ a{
   
   h2 {
     margin: 20px 0;
+    color: #fff;
   }
   
   .card-description {
@@ -93,7 +92,6 @@ a{
   padding: 35px 0;
   margin: 20px 30px 50px 0px;
   border: 2px solid #561B6B;
-  border-radius: 25px;
   position: sticky;
   top: 100px;
   
