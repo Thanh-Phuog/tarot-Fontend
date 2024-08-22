@@ -1,85 +1,83 @@
-import React, { useEffect } from "react";
-import "./styles/detail.css"; // Your custom styles
+import React from "react";
+import { styled } from "@mui/material/styles";
+import Grid from "@mui/material/Grid";
+import Paper from "@mui/material/Paper";
+import Box from "@mui/material/Box";
+import "./styles/detail.css";
+import Head from "./header";
+import SpeedDial from "@mui/material/SpeedDial";
+import ChatIcon from "@mui/icons-material/Chat";
+import axios from "axios";
 
-function DetailTarot(props) {
-  useEffect(() => {
-    // Khởi tạo Swiper từ window
-    const swiper = new window.Swiper(".swiper", {
-      effect: "cards",
-      grabCursor: true,
-      initialSlide: 2,
-      speed: 500,
-      loop: true,
-      rotate: true,
-      mousewheel: {
-        invert: false,
-      },
-    });
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: "center",
+  color: theme.palette.text.secondary,
+}));
 
-    // Clean up Swiper instance khi component bị unmount
-    return () => swiper.destroy();
-  }, []);
+export default class Cards extends React.Component {
+  state = {
+    cards: [], // Initialize with an empty array
+  };
 
-  return (
-    <div>
-      <h1>Chi tiết về lá bài Tarot</h1>
-      <div className="content">
-        <div className="info">
-          <p>
-            Info la bai
-            esrftgyuiopoiuytfrftgyhujkl;'lkjhgfdfghjkl;';oiuygtfrdtyuiop[]poiuy
-          </p>
-        </div>
-        <div className="swiper">
-          <div className="swiper-wrapper">
-            <div className="swiper-slide">
-              <img
-                src="https://tarot.com.vn/storage/app/media/The-Fool/The-fool-xuoi.jpg"
-                alt="The Fool"
-              />
-            </div>
-            <div className="swiper-slide">
-              <img
-                className="img-position"
-                src="https://tarot.com.vn/storage/app/media/The-Magician/The-magician-xuoi.jpg"
-                alt="The Magician"
-              />
-            </div>
-            <div className="swiper-slide">
-              <img
-                src="https://tarot.com.vn/storage/app/media/The-High-Priestess/The-high-priestess-xuoi.jpg"
-                alt="The High Priestess"
-              />
-            </div>
-            <div className="swiper-slide">
-              <img
-                src="https://tarot.com.vn/storage/app/media/The-Emperor/The-Emperor-xuoi.jpg"
-                alt="The Emperor"
-              />
-            </div>
-            <div className="swiper-slide">
-              <img
-                src="https://tarot.com.vn/storage/app/media/The-Empress/The-Empress-xuoi.jpg"
-                alt="The Empress"
-              />
-            </div>
-            <div className="swiper-slide">
-              <img
-                src="https://tarot.com.vn/storage/app/media/The-Lovers/The-lovers-xuoi.jpg"
-                alt="The Lovers"
-              />
-            </div>
-            <div className="swiper-slide">
-              <img
-                src="https://tarot.com.vn/storage/app/media/The-Chariot/The-Chariot-xuoi.jpg"
-                alt="The Chariot"
-              />
-            </div>
+  componentDidMount() {
+    axios
+      .get("https://tarotapi.dev/api/v1/cards")
+      .then((res) => {
+        // Assuming the API returns the structure with `cards`
+        this.setState({ cards: res.data.cards });
+      })
+      .catch((error) => console.log(error));
+  }
+
+  render() {
+    return (
+      <div>
+        <Head />
+        <div className="container">
+          <div className="content">
+            <Box sx={{ width: "90%" }}>
+              <h2>Tarot Cards</h2>
+              <Grid
+                container
+                rowSpacing={1}
+                columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+              >
+                {this.state.cards.map((card, index) => (
+                  <Grid item xs={3} key={index}>
+                    <a href="/detail">
+                      <img src={card.image} alt={card.name} />
+                      <div className="card-description">
+                        <p>{card.name}</p>
+                      </div>
+                    </a>
+                  </Grid>
+                ))}
+              </Grid>
+            </Box>
           </div>
+          <Box
+            sx={{
+              position: "fixed",
+              bottom: 16,
+              right: 16,
+              zIndex: 1000,
+            }}
+          >
+            <a href="/">
+              <SpeedDial
+                ariaLabel="SpeedDial openIcon example"
+                sx={{
+                  position: "relative",
+                }}
+                icon={<ChatIcon />}
+              />
+            </a>
+          </Box>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
-
-export default DetailTarot;

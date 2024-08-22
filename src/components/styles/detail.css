@@ -1,22 +1,21 @@
 .content{
-    width: 900px;
-    font-family: "Comfortaa";
+    
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     gap:30px;
-    background-color: rgba(133, 131, 133, 0.6);
+   
+}
+.detail{
+    width: 1000px;
+    font-family: "Comfortaa";
+    background-color: rgba(38, 24, 45, 0.6);
     border-radius: 20px;
     backdrop-filter: blur(30px);
-    box-shadow: 0 0.5px 1px 0 rgba(255, 255, 255, 0.23) inset,
-                0 1px 0 0 rgba(255, 255, 255, 66) inset,
-                0 4px 16px 0 rgba(0, 0, 0, 0.12);
-    padding: 45px 0;
-    z-index: 10;
-    margin:50px 0px 50px 0px;
+    margin:20px 0px 50px 0px;
+    border: 2px solid #561B6B;
 }
-
 .info{
     width: 450px;
     display: flex;
@@ -39,7 +38,7 @@
 .swiper{
     width: 250px;
     height: 400px;
-    padding: 50px 0;
+    padding: 20px 0;
 }
 .swiper-slide{
     position: relative;
@@ -58,22 +57,15 @@
 }/* App.css */
 .container {
     display: flex;
-    flex-direction: column;   /* Stack components vertically */
     justify-content: center;  /* Center vertically */
-    align-items: center;      /* Center horizontally */
     min-height: 100vh;        /* Full viewport height */
     text-align: center;
-    background: linear-gradient(180deg,
-    rgba(111, 36, 157, 1), /* Tương ứng với #6f249d */
-    rgba(41, 6, 63, 1),
-    rgba(111, 36, 157, 1)  /* Tương ứng với #6f249d */
-);
- /* Optional: Background color */
-  }
-  a{
+    margin-top: 10px;
+}
+a{
     text-decoration: none;
     color: #CDCDCD;
-  }
+}
   img {
     width: 100%;
     height: auto;
@@ -87,3 +79,99 @@
     text-align: center;
    
   }
+.body2{
+    align-items: center;   
+    flex-direction: column; 
+}
+.left{
+  width: 200px;
+  height: 200px;
+  font-family: "Comfortaa";
+  background-color: rgba(38, 24, 45, 0.6);
+  border-radius: 20px;
+  backdrop-filter: blur(30px);
+  padding: 35px 0;
+  margin: 20px 30px 50px 0px;
+  border: 2px solid #561B6B;
+  border-radius: 25px;
+  position: sticky;
+  top: 100px;
+  
+}
+.arr p{
+  color: #fff;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin: 5px 0 0px 0;
+
+}
+.search {
+  border-radius: 20px;
+  display: flex;
+  align-items: self-start;
+  border-radius: 25px;
+}
+
+.search input[type="text"] {
+  width: 120px; /* Set the input field width */
+  border: none;
+  outline: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 10px 0 0 10px;
+  background-color: rgba(196, 162, 222, 0.38);
+  color: #fff;
+}
+.search input[type="text"]::placeholder {
+  color: white;
+  opacity: 1; /* Ensure the color is fully opaque */
+}
+
+.search button {
+  background-color: rgba(240, 217, 255, 0.42);/* Green background */
+  border: none;
+  outline: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 10px 10px 0;
+}
+
+
+.search button svg {
+  color: #fff; /* White color for the search icon */
+  font-size: 19px;
+}
+/* checkbox */
+.checkbox {
+  display: flex;
+  flex-direction: column; /* Stack the checkbox-label pairs vertically */
+  margin: 10px 0; /* Add some margin around the container */
+}
+
+.checkbox div {
+  display: flex;
+  align-items: center; /* Align checkbox and label text vertically */
+  margin: 0 0 8px 30px; /* Space between each checkbox-label pair */
+}
+
+.checkbox input[type="checkbox"] {
+  margin-right: 10px; /* Space between checkbox and label */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.checkbox label {
+  cursor: pointer;
+  color: #fff; /* Set the label color */
+}
+
+.checkbox input[type="checkbox"]:hover {
+  transform: scale(1.1); /* Slightly enlarge the checkbox on hover */
+}
+
+
+.checkbox input[type="checkbox"]:checked + label {
+  font-weight: bold; /* Make the label bold when checkbox is checked */
+}

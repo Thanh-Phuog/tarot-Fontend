@@ -3,7 +3,7 @@ import Divider from '@mui/material/Divider';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
-import Logo from './header.png';
+import Logo from './logo.png';
 import './styles/header.css';
 
 const Item = styled(Paper)(({ theme }) => ({

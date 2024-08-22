@@ -6,17 +6,23 @@
         rgba(111, 36, 157, 1), 
         rgba(41, 6, 63, 1)
     );
+    overflow: hidden; /* Prevent scrolling issues */
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center; /* Centers content2 horizontally */
+    height: 550px; /* Full viewport height */
 }
 
 .iconlogo {
+    position: sticky;
+    z-index: 10;
+    top: 5px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     width: 100%;
-    padding: 10px 0 0 10px;
+    padding: 0px 0 0 10px;
 }
 
 .iconlogo img {
@@ -34,9 +40,16 @@
 
 /* Chat messages */
 .chat {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    flex: 1;
+    overflow-y: auto; /* Cho phép cuộn dọc */
+    padding: 10px;
+    border-radius: 15px;
+    max-height: calc(500px - 160px); /* Chiều cao tối đa để phù hợp với viewport */
+}
+/* Ẩn thanh cuộn nhưng vẫn cho phép cuộn dọc */
+.chat::-webkit-scrollbar {
+    width: 0px; /* Ẩn thanh cuộn ngang */
+    background: transparent; /* Hoặc background-color: transparent; */
 }
 
 .chatAI, .chatUser {
@@ -77,7 +90,7 @@
 }
 
 .send input[type="text"] {
-    width: 900px;
+    width: 850px;
     padding: 10px 40px 10px 15px;
     border-radius: 15px;
     border: 0.3px solid #250538;
@@ -97,9 +110,11 @@
     width: 100%;
     max-width: 900px;
     font-family: "Comfortaa", sans-serif;
-    gap: 100px;
+    gap: 10px;
     z-index: 10;
-    margin: 50px 0 0 0;
+    margin: 20px 0 0 0;
+    flex: 1;
+    overflow: hidden; /* Prevent scrolling issues */
     display: flex;
     flex-direction: column;
     align-items: center; /* Centers content inside content2 */
